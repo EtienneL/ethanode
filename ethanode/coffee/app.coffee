@@ -21,12 +21,15 @@ app.get '/', (req,res) ->
 	loadski('methods.html').then (data) ->
 		res.end data
 
+
 # On a request to /backend/rest/albums/photos, load the json
 app.get '/backend/rest/albums/photos', (req,res) ->
 	loadski('json/photos.json').then (data) ->
 		res.end data
 
 # On a request to /backend/rest/image/retrieveid/imageid, return the image
+app.get '/backend/rest/image/retreiveid/:imgid', (req,res) ->
+	res.sendimage 'photos/'+req.attrs.imgid+'.jpg'
 
 port = process.env.port | 5000
 

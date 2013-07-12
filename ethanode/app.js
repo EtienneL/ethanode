@@ -36,6 +36,10 @@
     });
   });
 
+  app.get('/backend/rest/image/retreiveid/:imgid', function(req, res) {
+    return res.sendimage('photos/' + req.attrs.imgid + '.jpg');
+  });
+
   port = process.env.port | 5000;
 
   console.log('listening on ' + port);
