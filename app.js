@@ -42,6 +42,12 @@
     });
   });
 
+  app.get('/smartshow', function(req, res) {
+    return loadski('json/smartshow.json').then(function(data) {
+      return res.end(data);
+    });
+  });
+
   app.get('/backend/rest/image/retreiveid/:imgid', function(req, res) {
     var filename, url;
 
@@ -50,7 +56,7 @@
     return res.sendfile('photos/' + filename);
   });
 
-  port = process.env.port | 5000;
+  port = process.env.PORT || 5000;
 
   console.log('listening on ' + port);
 

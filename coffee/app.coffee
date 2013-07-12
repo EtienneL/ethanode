@@ -34,6 +34,11 @@ app.get '/backend/rest/albums/photos', (req,res) ->
 	loadski('json/photos.json').then (data) ->
 		res.end data
 
+# On a request to /smartshow, load the json
+app.get '/smartshow', (req,res) ->
+	loadski('json/smartshow.json').then (data) ->
+		res.end data
+
 # On a request to /backend/rest/image/retrieveid/imageid, return the image
 app.get '/backend/rest/image/retreiveid/:imgid', (req,res) ->
 	url = images[req.params.imgid].src
