@@ -42,6 +42,12 @@
     });
   });
 
+  app.get('/smartshow', function(req, res) {
+    return loadski('json/smartshow.json').then(function(data) {
+      return res.end(data);
+    });
+  });
+
   app.get('/backend/rest/image/retreiveid/:imgid', function(req, res) {
     var filename, url;
 
