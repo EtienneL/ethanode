@@ -42,7 +42,7 @@
     });
   });
 
-  app.get('/smartshow', function(req, res) {
+  app.get('/backend/rest/smartshow', function(req, res) {
     return loadski('json/smartshow.json').then(function(data) {
       return res.end(data);
     });
