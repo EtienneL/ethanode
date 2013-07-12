@@ -50,7 +50,7 @@
     return res.sendfile('photos/' + filename);
   });
 
-  port = process.env.port | 5000;
+  port = process.env.PORT || 5000;
 
   console.log('listening on ' + port);
 
