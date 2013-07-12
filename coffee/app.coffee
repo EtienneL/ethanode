@@ -35,7 +35,7 @@ app.get '/backend/rest/albums/photos', (req,res) ->
 		res.end data
 
 # On a request to /smartshow, load the json
-app.get '/smartshow', (req,res) ->
+app.get '/backend/rest/smartshow', (req,res) ->
 	loadski('json/smartshow.json').then (data) ->
 		res.end data
 
